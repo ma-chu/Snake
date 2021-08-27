@@ -1,3 +1,4 @@
 # Snake
-Змейка
-Параметры задаются из редактора в 3 файлах: GameManager, SnakeMovement и Apple
+Змейка.
+
+Параметры задаются из редактора в 3 скриптах: GameManager, SnakeMovement и Apple
