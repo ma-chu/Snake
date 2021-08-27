@@ -15,6 +15,7 @@ public class Apple : MonoBehaviour
         GetComponent<SphereCollider>().enabled = false;
         GetComponent<SpriteRenderer>().sprite = stub;
         GetComponent<Animator>().enabled = false;
+        GetComponent<ParticleSystem>().Play();
         Invoke("Respawn", respawnTime);
     }
     
