@@ -1,14 +1,35 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
     // Параметр:
-    [SerializeField] private float respawnTime;                                            // Время перерождения
+    public float respawnTime;                                            // Время перерождения
     
     [SerializeField] private Sprite apple; 
     [SerializeField] private Sprite stub;
+
+    
+    private void OnEnable()
+    {
+        LoadSave.Save += OnSave;
+        LoadSave.Load += OnLoad;
+    }
+    private void OnDisable()
+    {
+        LoadSave.Save -= OnSave;
+        LoadSave.Load -= OnLoad;
+    }
+    private void OnSave()
+    {
+        LoadSave.SaveSnapshot.respawnTime = respawnTime;
+    }
+    private void OnLoad()
+    {
+        respawnTime = LoadSave.SaveSnapshot.respawnTime;
+    }
 
     void OnTriggerEnter(Collider other)
     {

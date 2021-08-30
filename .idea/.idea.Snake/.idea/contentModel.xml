@@ -8,6 +8,8 @@
           <e p="Apple.cs" t="Include" />
           <e p="CameraControl.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="LoadSave.cs" t="Include" />
+          <e p="SaveData.cs" t="Include" />
           <e p="SnakeColliderHandler.cs" t="Include" />
           <e p="SnakeMovement.cs" t="Include" />
         </e>

@@ -16,17 +16,32 @@ public class SnakeMovement : MonoBehaviour
     [SerializeField] private List<Vector3> track;
     
     private float _currentSpeed;
-    
+
     private void OnEnable()
     {
         GameManager.StartMove += OnStartMove;
         SnakeColliderHandler.ApplePicked += OnApplePicked;
+        
+        LoadSave.Save += OnSave;
+        LoadSave.Load += OnLoad;
     }
-
     private void OnDisable()
     {
         GameManager.StartMove -= OnStartMove;
         SnakeColliderHandler.ApplePicked -= OnApplePicked;
+        
+        LoadSave.Save -= OnSave;
+        LoadSave.Load -= OnLoad;
+    }
+    private void OnSave()
+    {
+        LoadSave.SaveSnapshot.speed = speed;
+        LoadSave.SaveSnapshot.accuracy = accuracy;
+    }
+    private void OnLoad()
+    {
+        speed = LoadSave.SaveSnapshot.speed;
+        accuracy = LoadSave.SaveSnapshot.accuracy;
     }
 
     private void Start()
@@ -54,7 +69,7 @@ public class SnakeMovement : MonoBehaviour
     private void OnStartMove()    
     {
         _currentSpeed = speed;
-        InvokeRepeating("SegmentsMovement", 1f,accuracy);
+        InvokeRepeating("SegmentsMovement", accuracy,accuracy);
     }
     
     private void OnApplePicked()    

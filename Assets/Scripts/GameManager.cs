@@ -1,8 +1,10 @@
 ﻿using System;
+using System.IO;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,26 +31,37 @@ public class GameManager : MonoBehaviour
     private int _widthHalf;
     private int _heightHalf;
     
-    private void Awake()
+/*    private void Awake()
     {
         _widthHalf = width / 2;
         _heightHalf = height / 2;
     }
-
+*/
     private void OnEnable()
     {
         SnakeColliderHandler.GameOver += OnGameOver;
         SnakeColliderHandler.ApplePicked += OnApplePicked;
+        
+        LoadSave.Save += OnSave;
+        LoadSave.Load += OnLoad;
     }
 
     private void OnDisable()
     {
         SnakeColliderHandler.GameOver -= OnGameOver;
         SnakeColliderHandler.ApplePicked -= OnApplePicked;
+        
+        LoadSave.Save -= OnSave;
+        LoadSave.Load -= OnLoad;
     }
 
     private void Start()
     {
+        LoadSave.LoadConfig();
+        
+        _widthHalf = width / 2;
+        _heightHalf = height / 2;
+
         CreateField();
         CreateWalls();
         CreateObstacles();
@@ -87,8 +100,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
-    
+
     private void CreateWalls()
     {
         var t = transform.rotation.normalized;
@@ -103,8 +115,7 @@ public class GameManager : MonoBehaviour
             Instantiate(obstacleNodePrefab, new Vector3(_widthHalf, h, 0f), t);
         }
     }
-    
-    
+
     private void CreateObstacles()
     {
         Vector3 leftLowerCorner = new Vector3(-_widthHalf, -_heightHalf, 0f);
@@ -140,5 +151,21 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
+    }
+
+    private void OnSave()
+    {
+        LoadSave.SaveSnapshot.height = height;
+        LoadSave.SaveSnapshot.width = width;
+        LoadSave.SaveSnapshot.obstacles = obstacles;
+        LoadSave.SaveSnapshot.apples = apples;
+    }
+    
+    private void OnLoad()
+    {
+        height = LoadSave.SaveSnapshot.height;
+        width = LoadSave.SaveSnapshot.width;
+        obstacles = LoadSave.SaveSnapshot.obstacles;
+        apples = LoadSave.SaveSnapshot.apples;
     }
 }

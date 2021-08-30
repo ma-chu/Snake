@@ -1410,8 +1410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66bb2db8a3140e428f46a1aec1d9c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  accuracy: 0.35
+  speed: 4
+  accuracy: 0.25
   segmentPrefab: {fileID: 4194334669670031868, guid: 1ede174355d8a1e4eb748858adfecf28,
     type: 3}
   segments: []
