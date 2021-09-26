@@ -53,7 +53,8 @@ public class SnakeMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Слежение головы за мышью
+        // Слежение головы за мышью (ортографическая камера)
+		// Так преобразовывть экранные координаты в мировые
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);          // Input.mousePosition.z=0
         Vector3 snakeToMouse = mousePosition - transform.position;
         transform.rotation = Quaternion.LookRotation(Vector3.forward, snakeToMouse); // какой именно вектор и куда подобрал перебором 

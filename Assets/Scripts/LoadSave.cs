@@ -8,18 +8,18 @@ public class LoadSave : MonoBehaviour
     public static event Action Save;
     public static event Action Load;
     
-    public static SaveData SaveSnapshot = new SaveData();
+    public static SaveData SaveSnapshot = new SaveData()/*ScriptableObject.CreateInstance<SaveData>()*/;
     
     // Для не нулевых значений сохраняемых полей нажимать при запущенной в редакторе игре
     [MenuItem("EF/Save config")]    // атрибут только для статических методов
-    private static  void SaveConfig()
+    private static void SaveConfig()
     {
         Save?.Invoke();
 
         var json = JsonUtility.ToJson(SaveSnapshot);
         
         // сюда д.б. разрешение на запись везде: в андроиде, винде, ...
-        var filePath = Path.Combine(Application.persistentDataPath/*dataPath*/, "config.json");
+        var filePath = Path.Combine(Application.persistentDataPath/*Application.dataPath*/, "config.json");
         System.IO.File.WriteAllText(filePath, json);
         Debug.Log(filePath + " saved");
     }
@@ -37,7 +37,7 @@ public class LoadSave : MonoBehaviour
             }
             catch
             {
-                Debug.Log("Bad config.json file");
+                Debug.Log("Bad config.json file "+ filePath);
                 return;
             }
 

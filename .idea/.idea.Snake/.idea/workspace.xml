@@ -20,13 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75b1b36c-ef10-49fc-814e-fe26af50cef5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Snake/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Snake/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Snake/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Snake/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Apple.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Apple.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Apple.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Apple.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadSave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadSave.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SnakeMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SnakeMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,10 +35,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraControl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Apple.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SnakeMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoadSave.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Apple.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraControl.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -49,10 +46,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ObstacleCollider.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SnakeColliderHandler.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Save.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CameraControl.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SnakeMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Apple.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CameraControl.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LoadSave.cs" />
       </list>
@@ -102,7 +99,8 @@
       <workItem from="1630060468220" duration="17000" />
       <workItem from="1630060596466" duration="12904000" />
       <workItem from="1630079022269" duration="18288000" />
-      <workItem from="1630186577434" duration="15765000" />
+      <workItem from="1630186577434" duration="17047000" />
+      <workItem from="1632489680483" duration="3148000" />
     </task>
     <servers />
   </component>

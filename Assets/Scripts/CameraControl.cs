@@ -7,15 +7,15 @@ public class CameraControl : MonoBehaviour
 
     [SerializeField] private Transform snakesHead;
     
-    //private Camera _camera;
     private Vector3 _moveVelocity;                       // ос от метода Vector3.SmoothDamp - реальная скорость движения камеры          
     private Vector3 _desiredPosition;         
 
-
+    /*private Camera _camera;
+     
     private void Awake()
     {
         //_camera = GetComponent<Camera>();
-    }
+    }*/
 
     private void OnEnable()
     {
@@ -42,7 +42,6 @@ public class CameraControl : MonoBehaviour
         
         Move();
     }
-
 
     private void Move()
     {
